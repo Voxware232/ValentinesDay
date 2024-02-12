@@ -28,19 +28,25 @@ let noBtnTexts = [
   "Be my partner in crime, say yes!",
   "Let's make this Valentine's Day unforgettable!",
   "Say yes and let's spread the love together!",
-  "Let's make hearts flutter, say yes!"
+  "Let's make hearts flutter, say yes!",
 ];
 let noBtnIndex = 0;
+let yesButtonSize = 20;
+function noClicked() {
+  document.getElementById("no-btn").innerText = noBtnTexts[noBtnIndex];
+  noBtnIndex = (noBtnIndex + 1) % noBtnTexts.length;
+  /*
+  document.getElementById("yes-btn").style.fontSize = `${
+    parseInt(document.getElementById("yes-btn").style.fontSize) + 2
+  }px`;
+  */
+  yesButtonSize += 2;
+  document.getElementById("yes-btn").style.fontSize = yesButtonSize + "px";
+  document.getElementById("valentine-img").src = "bunny-sad.jpg";
+}
 
 function yesClicked() {
   document.getElementById("question").innerText = "Yay!";
   document.getElementById("yes-btn").style.fontSize = "20px";
-}
-
-function noClicked() {
-  document.getElementById("no-btn").innerText = noBtnTexts[noBtnIndex];
-  noBtnIndex = (noBtnIndex + 1) % noBtnTexts.length;
-  document.getElementById("yes-btn").style.fontSize = `${
-    parseInt(document.getElementById("yes-btn").style.fontSize) + 2
-  }px`;
+  document.getElementById("valentine-img").src = "bunny-jumping.gif";
 }
