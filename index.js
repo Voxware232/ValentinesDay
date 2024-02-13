@@ -33,6 +33,7 @@ let noBtnTexts = [
 let noBtnIndex = 0;
 let yesButtonSize = 20;
 function noClicked() {
+  document.getElementById("question").innerText = "Will you be my valentine?";
   document.getElementById("no-btn").innerText = noBtnTexts[noBtnIndex];
   noBtnIndex = (noBtnIndex + 1) % noBtnTexts.length;
   /*
@@ -49,4 +50,12 @@ function yesClicked() {
   document.getElementById("question").innerText = "Yay!";
   document.getElementById("yes-btn").style.fontSize = "20px";
   document.getElementById("valentine-img").src = "bunny-jumping.gif";
+
+  setTimeout(function () {
+    window.alert("Love you :)");
+  }, 1000);
+
+  setTimeout(function () {
+    window.location.reload();
+  }, 10000);
 }
